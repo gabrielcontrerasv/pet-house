@@ -1,7 +1,7 @@
 module.exports = {
   database: {  
-        username : 'jstopgun',
-        password : '123456',
+        username : 'root',
+        password : '',
         database : 'pet_house',
         host: 'localhost'
   }
