@@ -12,10 +12,9 @@ const Employee = sequelize.define('Employee',{
   },
   document:{
     type:DataTypes.INTEGER
-  },
-
+  }
 },
-  {timestamps:false}
+{timestamps:false}
 );
 
 module.exports = Employee;

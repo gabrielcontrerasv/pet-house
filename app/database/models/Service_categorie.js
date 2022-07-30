@@ -11,6 +11,7 @@ const Service_Categorie = sequelize.define('Service_Categorie' ,{
     type: DataTypes.STRING,
     allowNull: false
   }
-});
+},
+{timestamps:false});
 
 module.exports = Service_Categorie;

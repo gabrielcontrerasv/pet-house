@@ -1,4 +1,3 @@
-
 const express = require('express');
 const app = express();
 const sequelize = require('./app/database/db');
@@ -11,7 +10,7 @@ app.get('/', (req, res) => {
 
 
 app.listen(port, () => {
-  sequelize.sync({force:true}).then(()=>{
+  sequelize.sync({force:false}).then(()=>{
     console.log('conectado sin novedad')
   })
   .catch((error) =>{
