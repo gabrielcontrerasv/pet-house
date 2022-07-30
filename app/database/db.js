@@ -6,11 +6,10 @@ const sequelize = new Sequelize(
   database.username, 
   database.password, {
     host: database.host,
-    port: '3306',
+    port: '3307',
     dialect: 'mysql'
   }
 );
 
-db.Employee =   require('../database/models/Employee')(sequelize,DataTypes);
 
 module.exports = sequelize;
