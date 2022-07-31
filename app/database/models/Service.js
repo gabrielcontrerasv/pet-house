@@ -19,6 +19,7 @@ const Service = sequelize.define('Service' ,{
     type: DataTypes.INTEGER,
     allowNull: false
   }
+  
 
 },
    { timestamps : false}

@@ -1,17 +1,20 @@
 const {  DataTypes } = require('sequelize');
 const sequelize = require('../db')
 
-const Service_Categorie = sequelize.define('Service_Categorie' ,{
+const Gender = sequelize.define('Gender',{
   id:{
     type: DataTypes.INTEGER,
     primaryKey:true,
     autoincrement: true
   },
-  categorie: {
+  gender: {
     type: DataTypes.STRING,
     allowNull: false
   }
-},
-{timestamps:false});
 
-module.exports = Service_Categorie;
+}
+,
+{timestamps:false}
+);
+
+module.exports = Gender;

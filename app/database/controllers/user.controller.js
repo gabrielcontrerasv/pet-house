@@ -1,4 +1,5 @@
 const User = require('../models/User');
-exports.show = (req, res) => {
-  res.send('funciona!')
+exports.show = async (req, res) => {
+  const usuarios = await User.findAll()
+  res.json(usuarios)
 };
