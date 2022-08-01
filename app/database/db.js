@@ -11,7 +11,7 @@ const sequelize = new Sequelize(
     dialect: database.dialect,
     dialectOptions: database.dialectOptions,
     define: {
-      underscored: true,
+      underscored: false,
     },
   }
 );

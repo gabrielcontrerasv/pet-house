@@ -10,7 +10,9 @@ module.exports = {
         phone: 123456,
         adress: 'callefalsa123',
         email : 'backend@admin.com',
-        password : 'secret'
+        password : 'secret',
+        RoleId : 1,
+        GenderId : 1
       },
       {
         id: 2,
@@ -20,7 +22,9 @@ module.exports = {
         phone: 123456,
         adress: 'callefalsa123',
         email : 'frontend@admin.com',
-        password : 'secret'
+        password : 'secret',
+        RoleId : 2,
+        GenderId : 1
       },
       {
         id: 3,
@@ -30,7 +34,9 @@ module.exports = {
         phone: 123456,
         adress: 'callefalsa123',
         email : 'test@admin.com',
-        password : 'secret'
+        password : 'secret',
+        RoleId : 3,
+        GenderId : 1
       }
      ] 
      await queryInterface.bulkInsert('Users', users, {});
