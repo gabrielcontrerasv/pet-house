@@ -4,8 +4,8 @@
   "description": "api y recursos del backend",
   "main": "app.js",
   "scripts": {
-    "test": "set NODE_ENV=test && nodemon app.js",
-    "prod": "set NODE_ENV=production && nodemon app.js",
+    "test": "export NODE_ENV=test && nodemon app.js",
+    "prod": "export NODE_ENV=production && nodemon app.js",
     "dev": "export NODE_ENV=development && nodemon app.js"
   },
   "repository": {

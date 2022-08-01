@@ -19,8 +19,6 @@ require("./app/routes/employees")(app);
 require("./app/routes/animals")(app);
 
 
-console.log(`NODE_ENV=${config.NODE_ENV}`);
-
 const port = process.env.port || 3006
 app.get('/', (req, res) => {
   res.send('Hello World!')
