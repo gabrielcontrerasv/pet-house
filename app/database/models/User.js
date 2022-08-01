@@ -17,7 +17,7 @@ const User = sequelize.define('User',{
     type: DataTypes.STRING,
     allowNull: false
   },
-  documento: {
+  document: {
     type: DataTypes.DOUBLE,
     allowNull: false
   },
@@ -27,7 +27,7 @@ const User = sequelize.define('User',{
   },
   adress: {
     type: DataTypes.STRING,
-    allowNull: false
+    allowNull: true
   },
   email: {
     type: DataTypes.STRING,
