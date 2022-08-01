@@ -1,5 +1,7 @@
 const {  DataTypes } = require('sequelize');
-const sequelize = require('../db')
+const sequelize = require('../db');
+const Gender = require('./Gender');
+const Role = require('./Role')
 
 const User = sequelize.define('User',{
   id:{
@@ -38,5 +40,6 @@ const User = sequelize.define('User',{
 },
 {timestamps:false}
 );
-
+User.belongsTo(Role)
+User.belongsTo(Gender)
 module.exports = User;

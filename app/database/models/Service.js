@@ -1,5 +1,6 @@
 const {  DataTypes } = require('sequelize');
-const sequelize = require('../db')
+const sequelize = require('../db');
+const Employee = require('./Employee');
 
 const Service = sequelize.define('Service' ,{
   id:{
@@ -25,4 +26,5 @@ const Service = sequelize.define('Service' ,{
    { timestamps : false}
 );
 
+Service.belongsTo(Employee)
 module.exports = Service;

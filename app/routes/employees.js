@@ -1,4 +1,4 @@
-const EmployeeController = require('../database/controllers/user.controller');
+const EmployeeController = require('../database/controllers/employee.controller');
 module.exports = app => {
   var router = require("express").Router();
   router.get("/", EmployeeController.show);

@@ -1,3 +1,4 @@
+const config = require('./config/config');
 const express = require('express');
 const app = express();
 const sequelize = require('./app/database/db');
@@ -15,12 +16,18 @@ const Breed = require('./app/database/models/Breed')
 const Animal = require('./app/database/models/Animal')
 require("./app/routes/users")(app);
 require("./app/routes/employees")(app);
+require("./app/routes/animals")(app);
 
-const port = process.env.port || 3003
+
+console.log(`NODE_ENV=${config.NODE_ENV}`);
+
+const port = process.env.port || 3006
 app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
+
+app.use(express.urlencoded({extended:false}))
 
 app.listen(port, () => {
   sequelize.sync({force: true}).then(()=>{

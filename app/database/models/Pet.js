@@ -1,5 +1,9 @@
 const {  DataTypes } = require('sequelize');
-const sequelize = require('../db')
+const sequelize = require('../db');
+const Animal = require('./Animal');
+const Breed = require('./Breed');
+const Gender = require('./Gender');
+const User = require('./User');
 
 const Pet = sequelize.define('Pet' ,{
   id:{
@@ -37,7 +41,11 @@ const Pet = sequelize.define('Pet' ,{
   photo:{
     type:DataTypes.STRING
   }
-
-});
-
+},
+{timestamps:false}
+);
+Pet.belongsTo(User)
+Pet.belongsTo(Gender)
+Pet.belongsTo(Breed)
+Pet.belongsTo(Animal)
 module.exports = Pet;

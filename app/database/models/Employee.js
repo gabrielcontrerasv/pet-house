@@ -1,5 +1,6 @@
 const {  DataTypes } = require('sequelize');
-const sequelize = require('../db')
+const sequelize = require('../db');
+const Specialitie = require('./Specialitie');
 
 const Employee = sequelize.define('Employee',{
   id:{
@@ -17,4 +18,5 @@ const Employee = sequelize.define('Employee',{
 {timestamps:false}
 );
 
+Employee.belongsTo(Specialitie)
 module.exports = Employee;
