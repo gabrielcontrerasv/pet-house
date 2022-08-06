@@ -9,20 +9,16 @@ const Pet = sequelize.define('Pet' ,{
   id:{
     type: DataTypes.INTEGER,
     primaryKey:true,
-    autoincrement: true
+    autoIncrement: true
   },
   name: {
-    type: DataTypes.STRING,
-    allowNull: false
-  },
-  lastname: {
     type: DataTypes.STRING,
     allowNull: false
   },
   code_number: {
     type: DataTypes.STRING
   },
-  birdthay:{
+  birthday:{
     type:DataTypes.DATE,
     allowNull: false
   },
@@ -34,7 +30,7 @@ const Pet = sequelize.define('Pet' ,{
     type:DataTypes.INTEGER,
     allowNull: false
   },
-  isNeutered:{
+  status:{
     type: DataTypes.BOOLEAN,
     allowNull: false
   },
@@ -47,5 +43,4 @@ const Pet = sequelize.define('Pet' ,{
 Pet.belongsTo(User)
 Pet.belongsTo(Gender)
 Pet.belongsTo(Breed)
-Pet.belongsTo(Animal)
 module.exports = Pet;

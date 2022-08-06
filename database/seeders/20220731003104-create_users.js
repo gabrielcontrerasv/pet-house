@@ -3,7 +3,6 @@ module.exports = {
 
      let users = [
       {
-        id: 1,
         name:'gabriel',
         lastname : 'bgt',
         document: 001,
@@ -15,7 +14,6 @@ module.exports = {
         GenderId : 1
       },
       {
-        id: 2,
         name:'nicolas',
         lastname : 'env',
         document: 002,
@@ -27,7 +25,6 @@ module.exports = {
         GenderId : 1
       },
       {
-        id: 3,
         name:'luis',
         lastname : 'cgn',
         document: 003,

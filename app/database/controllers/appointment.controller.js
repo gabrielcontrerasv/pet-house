@@ -1,20 +1,40 @@
 const Appointment = require('../models/Appointment');
+
 exports.show = async (req, res) => {
   const Appointments = await Appointment.findAll()
   res.json(Appointments)
 };
 
-exports.registro =  async (req, res) => {
-  const Appointment = await Appointment.create()
-}
+exports.register =  async (req, res) => {
+  const { date,description,PetId} = req.body
+    if (!date  || !description || !PetId) {
+       res.status(400).send({
+           status: false,
+           message: 'requieren los datos completos'
+       });
+   } else {
+           const Appoint = await Appointment.create({
+           date,
+           description,
+           PetId
+       })
+       res.json(`su numero de cita es ${Appoint.id}`)
+   }
+ }
+ 
 
 exports.showById = async (req,res)=>{
   const {id} = req.params;
   const Appoint = await Appointment.findByPk(id)
   res.json(Appoint)
 }
+exports.updateById = async (req,res)=>{
+  const {id} = req.params;
+  const Appoint = await Appointment.findByPk(id)
+  res.json(Appoint)
+}
 
-exports.delete = async (req,res)=>{
+exports.deleteById = async (req,res)=>{
   const {id} = req.params;
   const appointment = await Appointment.destroy({
     where: {

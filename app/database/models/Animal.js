@@ -6,9 +6,11 @@ const Animal = sequelize.define('Animal' ,{
     type: DataTypes.INTEGER,
     primaryKey:true,
     autoincrement: true,
+    unique:true
   },
   specie :{
-    type: DataTypes.STRING
+    type: DataTypes.STRING,
+    unique: true
   }
 },
 {timestamps:false}

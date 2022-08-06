@@ -11,6 +11,7 @@ module.exports = {
         //adress: 'callefalsa123',
         //email : 'backend@admin.com',
         //password : 'secret'
+        SpecialitieId : 1
       },
       {
         id: 2,
@@ -20,7 +21,8 @@ module.exports = {
         //phone: 123456,
         //adress: 'callefalsa123',
         //email : 'frontend@admin.com',
-        //password : 'secret'
+        //password : 'secret',
+        SpecialitieId : 2
       },
       {
         id: 3,
@@ -31,6 +33,7 @@ module.exports = {
         //adress: 'callefalsa123',
         //email : 'test@admin.com',
         //password : 'secret'
+        SpecialitieId : 3
       }
      ] 
      await queryInterface.bulkInsert('Employees', employees, {});

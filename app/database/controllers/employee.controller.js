@@ -5,7 +5,7 @@ exports.show = async (req, res) => {
         res.json(Employees)
     }
 
-exports.registro =  async (req, res) => {
+exports.register =  async (req, res) => {
         const employee = await Employee.create()
       }
 
@@ -14,9 +14,14 @@ exports.showById = async (req,res)=>{
     const employee = await Employee.findByPk(id)
     res.json(employee)
   }
+  exports.updateById = async (req,res)=>{
+    const {id} = req.params;
+    const Employee = await Employee.findByPk(id)
+    res.json(Employee)
+  }
 
 
-exports.delete = async (req,res)=>{
+exports.deleteById = async (req,res)=>{
     const {id} = req.params;
     const employee = await Employee.destroy({
         where: {

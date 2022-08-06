@@ -1,8 +1,11 @@
 const config = require('./config/config');
-const express = require('express');
+var express = require('express')
 const cors = require('cors');
-const app = express();
+var bodyParser = require('body-parser')
+var router = express.Router();
 const sequelize = require('./app/database/db');
+var app = express()
+
 const Role = require('./app//database/models/Role');
 const User = require('./app//database/models/User');
 const Employee = require('./app/database/models/Employee');
@@ -14,22 +17,22 @@ const Service = require('./app/database/models/Service');
 const Appointment = require('./app/database/models/Appointment');
 const Specialitie = require('./app/database/models/Specialitie');
 const Breed = require('./app/database/models/Breed')
-const Animal = require('./app/database/models/Animal')
-require("./app/routes/users")(app);
-require("./app/routes/employees")(app);
-require("./app/routes/animals")(app);
-require("./app/routes/appointments")(app);
+
+const RouterApi = require('./app/routes');
 
 
-const port = process.env.port || 3001
+
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
+
+app.use(bodyParser.json());
+
+RouterApi(app)
+const port = process.env.port || 3005
 app.get('/', (req, res) => {
   res.send('Hello World!')
 })
-
-app.use(express.json());
-app.use(cors());
-
-app.use(express.urlencoded({extended:false}))
 
 app.listen(port, () => {
   sequelize.sync({force: true}).then(()=>{
@@ -40,3 +43,4 @@ app.listen(port, () => {
   })
 })
 
+//app.use(cors());
