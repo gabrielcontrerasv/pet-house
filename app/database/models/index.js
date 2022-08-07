@@ -1,8 +1,6 @@
 'use strict';
 
-
-
-function db (app){
+function ModelApi (app){
   app.use(Role)
   app.use(User)
   app.use(Employee)
@@ -16,4 +14,6 @@ function db (app){
 
 
 }
+
+module.exports = ModelApi;
 
