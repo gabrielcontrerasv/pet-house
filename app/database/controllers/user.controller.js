@@ -28,7 +28,7 @@ exports.register =  async (req, res) => {
 }
 
 exports.showById = async (req,res)=>{
-  const {id} = req.body;
+  const {id} = req.body
   const usuario = await User.findByPk(id)
   res.json(usuario)
 }
@@ -55,6 +55,18 @@ exports.updateById = async (req,res)=>{
   const {id} = req.body;
   const User = await User.findByPk(id)
   res.json(User)
+}
+
+exports.updateUserRoleById = async (req,res)=>{
+  const {id,roleId} = req.body;
+  const User = await User.update(
+    {
+      roleId,
+    },
+    {
+      where: {id},
+    }
+  );
 }
 
 exports.deleteById = async (req,res)=>{

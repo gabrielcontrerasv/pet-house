@@ -12,9 +12,9 @@ exports.register =  async (req, res) => {
 }
 
 exports.showById = async (req,res)=>{
-  const {id} = req.params;
-  const Pet = await Pet.findByPk(id)
-  res.json(Pet)
+  const {id} = req.body;
+  const Pets = await Pet.findByPk(id)
+  res.json(Pets)
 }
 exports.updateById = async (req,res)=>{
   const {id} = req.params;

@@ -29,7 +29,7 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 RouterApi(app)
-const port = process.env.port || 3008
+const port = process.env.port || 3005
 app.get('/', (req, res) => {
   res.send('Hello World!')
 })
@@ -43,4 +43,3 @@ app.listen(port, () => {
   })
 })
 
-//app.use(cors());
