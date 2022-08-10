@@ -6,7 +6,6 @@ var router = express.Router();
 const sequelize = require('./app/database/db');
 var app = express()
 
-
 const Role = require('./app//database/models/Role');
 const User = require('./app//database/models/User');
 const Employee = require('./app/database/models/Employee');
@@ -31,13 +30,13 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 RouterApi(app)
-const port = process.env.port || 3001
+const port = process.env.port || 30015
 app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
 app.listen(port, () => {
-  sequelize.sync({alter: true}).then(()=>{
+  sequelize.sync({force: true}).then(()=>{
     console.log('conectado sin novedad')
   })
   .catch((error) =>{

@@ -6,7 +6,7 @@ const express = require('express')
   router.get("/", userController.show);
   //router.post("/login", userController.login);
   router.get("/:id", userController.showById);
-  router.post("/",userController.register);
+  //router.post("/",userController.register);
   router.put("/:id",userController.updateById);
   router.patch("/role/:id",userController.updateUserRoleById);
   router.delete("/:id",userController.deleteById);
