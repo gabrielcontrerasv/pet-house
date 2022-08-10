@@ -1,3 +1,4 @@
+const bcrypt= require('bcrypt');
 module.exports = {
   async up (queryInterface, Sequelize) {
 
@@ -9,7 +10,7 @@ module.exports = {
         phone: 123456,
         adress: 'callefalsa123',
         email : 'backend@admin.com',
-        password : 'secret',
+        password : await bcrypt.hash('secret', 10),
         RoleId : 1,
         GenderId : 1
       },
@@ -20,7 +21,7 @@ module.exports = {
         phone: 123456,
         adress: 'callefalsa123',
         email : 'frontend@admin.com',
-        password : 'secret',
+        password : await bcrypt.hash('secret', 10),
         RoleId : 2,
         GenderId : 1
       },
@@ -31,7 +32,7 @@ module.exports = {
         phone: 123456,
         adress: 'callefalsa123',
         email : 'test@admin.com',
-        password : 'secret',
+        password : await bcrypt.hash('secret', 10),
         RoleId : 3,
         GenderId : 1
       }

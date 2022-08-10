@@ -1,4 +1,5 @@
 
+const passport = require('passport');
 const appointmentsRouter = require('./appointments.router')
 const petsRouter = require('./pets.router')
 const usersRouter = require('./users.router')
@@ -9,15 +10,13 @@ const roleRouter = require('./roles.router')
 const authRouter = require('./auth.router')
 
 function RouterApi(app){
-    app.use('/appointments' ,appointmentsRouter)
-    app.use('/pets' ,petsRouter)
-    app.use('/users' ,usersRouter)
-    app.use('/employees' ,employeesRouter)
-    app.use('/genders' ,gendersRouter)
-    app.use('/specialities' ,specialitieRouter)
-    app.use('/roles' ,roleRouter)
+    app.use('/appointments' ,passport.authenticate("jwt", { session: false }),appointmentsRouter)
+    app.use('/pets' ,passport.authenticate("jwt", { session: false }),petsRouter)
+    app.use("/users", passport.authenticate("jwt", { session: false }),usersRouter);
+    app.use('/employees', passport.authenticate("jwt", { session: false }),employeesRouter)
+    app.use('/genders',passport.authenticate("jwt", { session: false }) ,gendersRouter)
+    app.use('/specialities',passport.authenticate("jwt", { session: false }) ,specialitieRouter)
+    app.use('/roles',passport.authenticate("jwt", { session: false }) ,roleRouter)
     app.use('/auth' ,authRouter)
 }
-
-
 module.exports = RouterApi;
