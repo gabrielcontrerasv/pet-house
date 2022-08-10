@@ -11,8 +11,6 @@ function ModelApi (app){
   app.use(Service)
   app.use(Appointment)
   app.use(Role)
-
-
 }
 
 module.exports = ModelApi;

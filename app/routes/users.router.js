@@ -4,7 +4,7 @@ const express = require('express')
 
   const router = express.Router();
   router.get("/", userController.show);
-  router.post("/login", userController.login);
+  //router.post("/login", userController.login);
   router.get("/:id", userController.showById);
   router.post("/",userController.register);
   router.put("/:id",userController.updateById);

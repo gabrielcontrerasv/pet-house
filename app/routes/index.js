@@ -6,6 +6,7 @@ const employeesRouter = require('./employees.router')
 const gendersRouter = require('./genders.router')
 const specialitieRouter = require('./specilities.router')
 const roleRouter = require('./roles.router')
+const authRouter = require('./auth.router')
 
 function RouterApi(app){
     app.use('/appointments' ,appointmentsRouter)
@@ -15,7 +16,7 @@ function RouterApi(app){
     app.use('/genders' ,gendersRouter)
     app.use('/specialities' ,specialitieRouter)
     app.use('/roles' ,roleRouter)
-
+    app.use('/auth' ,authRouter)
 }
 
 

@@ -1,3 +1,5 @@
+const bcrypt= require('bcrypt');
+const boom = require('@hapi/boom')
 const User = require('../models/User');
 
 exports.show = async (req, res) => {
@@ -14,6 +16,7 @@ exports.register =  async (req, res) => {
           message: 'requieren los datos completos'
       });
   } else {
+          const hash = await bcrypt.hash(password, 10);
           const usuario = await User.create({
           name, 
           lastname,
@@ -21,9 +24,9 @@ exports.register =  async (req, res) => {
           phone,
           adress,
           email,
-          password,
+          password:hash
       })
-      res.json(`usuario ${name} registrado correctamente`)
+      res.json(`usuario ${hash} registrado correctamente`)
   }
 }
 
@@ -32,6 +35,15 @@ exports.showById = async (req,res)=>{
   const usuario = await User.findByPk(id)
   res.json(usuario)
 }
+
+exports.showByEmail = async (req,res)=>{
+  const {email} = req.body
+  const usuario = await User.findOne({
+    where : {email}
+  })
+  res.json(usuario)
+}
+
 
 exports.login = async (req,res)=>{
   const {email,password} = req.body;
