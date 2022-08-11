@@ -20,7 +20,6 @@ try {
 
     done(null,{...user.dataValues,token})
 
-
 } catch (error) {
     done(error);
 }
