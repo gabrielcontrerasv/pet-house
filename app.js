@@ -30,11 +30,26 @@ app.use(bodyParser.urlencoded({
 
 app.use(bodyParser.json());
 
+/*
+app.use(function (req, res, next) {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+  res.setHeader('Access-Control-Allow-Credentials', true);
+  next();
+});
+*/
+
+app.use(cors({
+  origin : "*"
+}))
 RouterApi(app)
-const port = process.env.port || 3008
+const port = process.env.port || 3000
 app.get('/', (req, res) => {
   res.send('Hello World!')
 })
+
+
 
 app.listen(port, () => {
   sequelize.sync({alter: true}).then(()=>{
