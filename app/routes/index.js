@@ -8,6 +8,7 @@ const gendersRouter = require('./genders.router')
 const specialitieRouter = require('./specilities.router')
 const roleRouter = require('./roles.router')
 const authRouter = require('./auth.router')
+const userRegisterRouter = require('./register.router')
 
 function RouterApi(app){
     app.use('/appointments' ,passport.authenticate("jwt", { session: false }),appointmentsRouter)
@@ -18,5 +19,6 @@ function RouterApi(app){
     app.use('/specialities',passport.authenticate("jwt", { session: false }) ,specialitieRouter)
     app.use('/roles',passport.authenticate("jwt", { session: false }) ,roleRouter)
     app.use('/auth' ,authRouter)
+    app.use('/register' ,userRegisterRouter)
 }
 module.exports = RouterApi;

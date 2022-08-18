@@ -1,5 +1,4 @@
 const bcrypt= require('bcrypt');
-const boom = require('@hapi/boom')
 const User = require('../models/User');
 
 exports.show = async (req, res) => {

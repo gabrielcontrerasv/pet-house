@@ -6,7 +6,6 @@ var router = express.Router();
 const sequelize = require('./app/database/db');
 var app = express()
 
-
 const Role = require('./app//database/models/Role');
 const User = require('./app//database/models/User');
 const Employee = require('./app/database/models/Employee');
@@ -34,25 +33,36 @@ app.use(bodyParser.json());
 app.use(function (req, res, next) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+  res.setHeader('Access-Control-Allow-Headers', '*');
   res.setHeader('Access-Control-Allow-Credentials', true);
   next();
 });
-*/
 
+*/
+/*
 app.use(cors({
   origin : "*"
 }))
+*/
+
+app.use(
+  cors({
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    origin: '*',
+    optionsSuccessStatus: 200,
+    credentials: true,
+  })
+);
+
 RouterApi(app)
-const port = process.env.port || 3000
+
+const port = process.env.port || 3010
 app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
-
-
 app.listen(port, () => {
-  sequelize.sync({alter: true}).then(()=>{
+  sequelize.sync({force: true}).then(()=>{
     console.log('conectado sin novedad')
   })
   .catch((error) =>{
