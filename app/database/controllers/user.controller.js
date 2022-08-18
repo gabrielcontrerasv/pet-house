@@ -30,7 +30,7 @@ exports.register =  async (req, res) => {
 }
 
 exports.showById = async (req,res)=>{
-  const {id} = req.body
+  const {id} = req.params
   const usuario = await User.findByPk(id)
   res.json(usuario)
 }
