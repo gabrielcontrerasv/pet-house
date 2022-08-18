@@ -36,6 +36,10 @@ const Pet = sequelize.define('Pet' ,{
   },
   photo:{
     type:DataTypes.STRING
+  },
+  AnimalId:{
+    type:DataTypes.INTEGER,
+    allowNull: true
   }
 },
 {timestamps:false}
@@ -43,4 +47,5 @@ const Pet = sequelize.define('Pet' ,{
 Pet.belongsTo(User)
 Pet.belongsTo(Gender)
 Pet.belongsTo(Breed)
+Pet.belongsTo(Animal)
 module.exports = Pet;

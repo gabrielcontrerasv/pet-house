@@ -11,6 +11,7 @@ const User = require('./app//database/models/User');
 const Employee = require('./app/database/models/Employee');
 const Gender = require('./app/database/models/Gender');
 const Pet = require('./app/database/models/Pet');
+const Animal = require('./app/database/models/Animal');
 const Record = require('./app/database/models/Record');
 const Catergorie = require('./app/database/models/Categorie');
 const Service = require('./app/database/models/Service');
@@ -28,7 +29,6 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.use(bodyParser.json());
-
 
 app.use(
   cors({
