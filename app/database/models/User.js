@@ -39,11 +39,11 @@ const User = sequelize.define('User',{
   },
   birthday:{
     type: DataTypes.DATE,
-    allowNull:false
+    allowNull:true
   },
   passwordconfirm:{
     type: DataTypes.STRING,
-    allowNull: false
+    allowNull: true
   },
   RoleId: {
     type: DataTypes.INTEGER,
