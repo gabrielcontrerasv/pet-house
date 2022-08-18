@@ -3,7 +3,7 @@ const User = require('../models/User');
 
 
 exports.register =  async (req, res) => {
- const { name,lastname,document,phone,adress,email,password} = req.body
+ const { name,lastname,document,phone,adress,email,password,genderId,birthday,passwordconfirm} = req.body
    if (!req.body.email || !req.body.password) {
       res.status(400).send({
           status: false,
@@ -18,7 +18,9 @@ exports.register =  async (req, res) => {
           phone,
           adress,
           email,
-          password:hash
+          password:hash,
+          passwordconfirm:hash,
+          genderId
       })
       res.json(`usuario registrado correctamente`)
   }
