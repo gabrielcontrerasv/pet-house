@@ -6,9 +6,24 @@ exports.show = async (req, res) => {
 };
 
 exports.register =  async (req, res) => {
-  const {username} = req.body;
+  const {name,code_number,birthday,isIntern,weight,status,photo,AnimalId,UserId,GenderId,BreedId} = req.body;
   res.send(username)
-  //const Pet = await Pet.create()
+  const Pet = await Pet.create(
+    {
+      name,
+      code_number,
+      birthday,
+      isIntern,
+      weight,
+      status,
+      photo,
+      AnimalId,
+      UserId,
+      GenderId,
+      BreedId
+    }
+  )
+  res.send(`Mascota ${name} registrada`)
 }
 
 exports.showById = async (req,res)=>{
