@@ -37,10 +37,18 @@ const User = sequelize.define('User',{
     type: DataTypes.STRING,
     allowNull: false
   },
+  birthday:{
+    type: DataTypes.DATE,
+    allowNull:false
+  },
+  passwordconfirm:{
+    type: DataTypes.STRING,
+    allowNull: false
+  },
   RoleId: {
     type: DataTypes.INTEGER,
     allowNull: true,
-    defaultValue: 2
+    defaultValue: 3
   }
 },
 {timestamps:false}
