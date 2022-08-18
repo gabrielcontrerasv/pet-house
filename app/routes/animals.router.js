@@ -1,12 +1,12 @@
-const petController = require('../database/controllers/pet.controller');
+const animalController = require('../database/controllers/animal.controller');
 const express = require('express')
 
 
   const router = express.Router();
-  router.get("/", petController.show);
-  router.get("/:id", petController.showById);
-  router.post("/",petController.register);
-  router.put("/:id",petController.updateById);
-  router.delete("/:id",petController.deleteById);
+  router.get("/", animalController.show);
+  router.get("/:id", animalController.showById);
+  router.post("/",animalController.register);
+  router.put("/:id",animalController.updateById);
+  router.delete("/:id",animalController.deleteById);
 
   module.exports = router;
