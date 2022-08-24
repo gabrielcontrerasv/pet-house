@@ -7,7 +7,7 @@ exports.show = async (req, res) => {
 
 exports.register =  async (req, res) => {
   const {name,microchip,birthday,weight,status,photo,AnimalId,UserId,GenderId,BreedId} = req.body;
-  if (!req.body.name || !req.body.UserId) {
+  if (!name || !UserId || birthday || microchip || photo || AnimalId || GenderId || BreedId || weight ||status ) {
     res.status(400).send({
         status: false,
         message: 'requieren los datos completos'

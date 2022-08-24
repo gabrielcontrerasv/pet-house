@@ -7,7 +7,7 @@ exports.show = async (req, res) => {
 
 exports.register =  async (req, res) => {
   const { date,description,PetId,serviceId} = req.body
-    if (!date  || !description || !PetId) {
+    if (!date  || !description || !PetId || serviceId) {
        res.status(400).send({
            status: false,
            message: 'requieren los datos completos'

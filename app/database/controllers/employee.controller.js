@@ -5,9 +5,23 @@ exports.show = async (req, res) => {
         res.json(Employees)
     }
 
-exports.register =  async (req, res) => {
-        const employee = await Employee.create()
-      }
+    exports.register =  async (req, res) => {
+      const { name,document,SpecialityId} = req.body
+        if (!name  || !document || !SpecialityId) {
+           res.status(400).send({
+               status: false,
+               message: 'requieren los datos completos'
+           });
+       } else {
+               const Employ = await Employee.create({
+               name,
+               document,
+               SpecialityId,
+               
+           })
+           res.json(`su numero de cita es ${Employ.name} ha sido registrado sin novedad`)
+       }
+     }
 
 exports.showById = async (req,res)=>{
     const {id} = req.params;

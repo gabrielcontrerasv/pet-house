@@ -9,7 +9,7 @@ exports.show = async (req, res) => {
 
 exports.register =  async (req, res) => {
  const { name,lastName,document,phone,address,email,password,birthday,GenderId} = req.body
-   if (!req.body.email || !req.body.password) {
+   if (!email || password || document || address || email || birthday || GenderId || phone || lastName) {
       res.status(400).send({
           status: false,
           message: 'requieren los datos completos'
