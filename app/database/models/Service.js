@@ -6,7 +6,7 @@ const Service = sequelize.define('Service' ,{
   id:{
     type: DataTypes.INTEGER,
     primaryKey:true,
-    autoincrement: true
+    autoIncrement: true
   },
   service: {
     type: DataTypes.STRING,
@@ -20,11 +20,8 @@ const Service = sequelize.define('Service' ,{
     type: DataTypes.INTEGER,
     allowNull: false
   }
-  
-
 },
    { timestamps : false}
 );
 
-Service.belongsTo(Employee)
 module.exports = Service;

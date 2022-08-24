@@ -6,7 +6,7 @@ exports.show = async (req, res) => {
 };
 
 exports.register =  async (req, res) => {
-  const { date,description,PetId} = req.body
+  const { date,description,PetId,serviceId} = req.body
     if (!date  || !description || !PetId) {
        res.status(400).send({
            status: false,
@@ -15,6 +15,7 @@ exports.register =  async (req, res) => {
    } else {
            const Appoint = await Appointment.create({
            date,
+           serviceId,
            description,
            PetId
        })

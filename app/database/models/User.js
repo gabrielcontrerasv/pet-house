@@ -13,7 +13,7 @@ const User = sequelize.define('User',{
     type: DataTypes.STRING,
     allowNull: false
   },
-  lastname: {
+  lastName: {
     type: DataTypes.STRING,
     allowNull: false
   },
@@ -25,7 +25,7 @@ const User = sequelize.define('User',{
     type: DataTypes.DOUBLE,
     allowNull: false
   },
-  adress: {
+  address: {
     type: DataTypes.STRING,
     allowNull: true
   },
@@ -39,16 +39,21 @@ const User = sequelize.define('User',{
   },
   birthday:{
     type: DataTypes.DATE,
-    allowNull:true
+    allowNull:false
   },
   passwordconfirm:{
     type: DataTypes.STRING,
-    allowNull: true
+    allowNull: false
   },
   RoleId: {
     type: DataTypes.INTEGER,
-    allowNull: true,
+    allowNull: false,
     defaultValue: 3
+  },
+  GenderId: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    defaultValue: 1
   }
 },
 {timestamps:false}

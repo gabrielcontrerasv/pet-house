@@ -15,14 +15,14 @@ const Pet = sequelize.define('Pet' ,{
     type: DataTypes.STRING,
     allowNull: false
   },
-  code_number: {
+  microchip: {
     type: DataTypes.STRING
   },
   birthday:{
     type:DataTypes.DATE,
     allowNull: false
   },
-  isIntern:{
+  status:{
     type:DataTypes.BOOLEAN,
     allowNull: false
   },
@@ -40,10 +40,16 @@ const Pet = sequelize.define('Pet' ,{
   AnimalId:{
     type:DataTypes.INTEGER,
     allowNull: true
+  },
+  UserId:{
+    type:DataTypes.INTEGER,
+    allowNull: true
   }
 },
 {timestamps:false}
 );
+
+User.hasMany(Pet);
 Pet.belongsTo(User)
 Pet.belongsTo(Gender)
 Pet.belongsTo(Breed)

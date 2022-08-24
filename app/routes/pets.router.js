@@ -5,6 +5,7 @@ const express = require('express')
   const router = express.Router();
   router.get("/", petController.show);
   router.get("/:id", petController.showById);
+  router.get("/user/:id", petController.showByUser);
   router.post("/",petController.register);
   router.put("/:id",petController.updateById);
   router.delete("/:id",petController.deleteById);

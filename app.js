@@ -41,7 +41,7 @@ app.use(
 
 RouterApi(app)
 
-const port = process.env.port || 3000
+const port = process.env.port || 3001
 app.get('/', (req, res) => {
   res.send('Hello World!')
 })

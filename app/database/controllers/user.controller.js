@@ -8,7 +8,7 @@ exports.show = async (req, res) => {
 
 
 exports.register =  async (req, res) => {
- const { name,lastname,document,phone,adress,email,password} = req.body
+ const { name,lastName,document,phone,address,email,password,birthday,GenderId} = req.body
    if (!req.body.email || !req.body.password) {
       res.status(400).send({
           status: false,
@@ -18,19 +18,22 @@ exports.register =  async (req, res) => {
           const hash = await bcrypt.hash(password, 10);
           const usuario = await User.create({
           name, 
-          lastname,
+          lastName,
           document,
           phone,
-          adress,
+          address,
           email,
-          password:hash
+          birthday,
+          password:hash,
+          passwordconfirm:password,
+          GenderId
       })
       res.json(`usuario ${hash} registrado correctamente`)
   }
 }
 
 exports.showById = async (req,res)=>{
-  const {id} = req.params
+  const {id} = req.body
   const usuario = await User.findByPk(id)
   res.json(usuario)
 }

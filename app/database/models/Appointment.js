@@ -1,6 +1,7 @@
 const {  DataTypes } = require('sequelize');
 const sequelize = require('../db');
 const Pet = require('./Pet');
+const Service = require('./Service');
 
 const Appointment = sequelize.define('Appointment', {
   id:{
@@ -24,5 +25,6 @@ const Appointment = sequelize.define('Appointment', {
 {timestamps:false});
 
 Appointment.belongsTo(Pet)
+Appointment.belongsTo(Service)
 
 module.exports = Appointment;
