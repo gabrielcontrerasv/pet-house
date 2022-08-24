@@ -4,6 +4,11 @@ _Teams Veterinary Clinic es un software de gestión para centros veterinarios, m
 
 ## Comenzando 🚀
 
+
+##Documentacion API
+
+<a href="https://documenter.getpostman.com/view/20082346/VUqrPczX">Acceso a la Documentacion 🚀</a>
+
 _Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas._
 
 Mira **Deployment** para conocer como desplegar el proyecto.
@@ -63,6 +68,8 @@ _Herramientas que utilizadas para crear tu proyecto_
 
 
 ## Versionado 📌
+
+## SERVIDOR http://3.139.109.107
 
 ## Autores ✒️
 
