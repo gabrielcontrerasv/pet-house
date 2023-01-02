@@ -69,15 +69,13 @@ _Herramientas que utilizadas para crear tu proyecto_
 
 ## Versionado 📌
 
-## SERVIDOR http://3.139.109.107
-
 ## Autores ✒️
 
 _Personas que ayudaron a levantar el proyecto desde sus inicios_
 
-* **Gabriel** - *Trabajo Frontend* 
-* **Nicolas** - *Backend* 
-* **Luis** - *Testing* 
+* **Gabriel Contreras** - * Technical Lead | Backend Developer * 
+* **Junior Cerquera** - * Technical Lead | Testing && QA Developer * 
+* **Nicolas Peña** - * Frontend Developer | UX && UI Designer | * 
 
 También puedes mirar la lista de todos los [contribuyentes](https://github.com/your/project/contributors) quíenes han participado en este proyecto. 
 
@@ -87,10 +85,10 @@ Este proyecto está bajo la Licencia gratuita para que sea mejorado o actualizad
 
 ## Gratitud 🎁
 
-* Gracias a los compañeros y profesores los cuales nos brindaron orientacion y apoyo para culminar este proyecto 📢
-* A los compañeros que cada clase aportaron de sus conocimientos y a los gruñones que nos abandonaron.
+* agradecemos a todos quienes en su momento nos brindaron orientacion y apoyo para culminar este proyecto 📢
+* A los aportaron sus conocimientos y a los gruñones que nos abandonaron esperamos representarlos.
 
 ---
-Gracias a Top Gun de team international por la oportunidad de aprender este hermoso arte 😊
+estamos aprendendiendo este hermoso arte 😊, cualquier aporte es bienvenido.
 
 
