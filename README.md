@@ -43,7 +43,7 @@ export NODE_ENV=development && nodemon app.js
 ```
 -Comando para ejecutar en el ambiente en produccion_
 ```
-export NODE_ENV=production && nodemon app.js
+export NODE_ENV=production && node app.js
 ```
 _ este comando migra toda la informacion de base en las base de datos_
 ```
